@@ -70,6 +70,10 @@ int main(int argc, char* argv[])
                 break;
             case 4:
                 saveTasksToFile(tasks, FILENAME);
+                message = "Задачи сохранены";
+                break;
+            case 5:
+                saveTasksToFile(tasks, FILENAME);
                 cout << "Задачи сохранены. До встречи!" << endl;
                 running = false;
                 break;
@@ -99,7 +103,8 @@ void displayMenu()
     cout << "1. Добавить задачу" << endl;
     cout << "2. Завершить задачу" << endl;
     cout << "3. Удалить задачу" << endl;
-    cout << "4. Сохранить и выйти" << endl;
+    cout << "4. Сохранить" << endl;
+    cout << "5. Сохранить и выйти" << endl;
     cout << "---------------------" << endl;
 }
 
@@ -119,7 +124,7 @@ int readInt(const string &prompt)
 
         if (cin.eof())
         {
-            return 4; // конец ввода (Ctrl+Z / Ctrl+D) - считаем как "Сохранить и выйти"
+            return 5; // конец ввода (Ctrl+Z / Ctrl+D) - считаем как "Сохранить и выйти"
         }
 
         cin.clear(); // сбрасываем флаг ошибки
